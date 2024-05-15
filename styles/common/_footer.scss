@@ -1,0 +1,323 @@
+// Footer CSS
+.v_footer {
+  padding: 70px 0;
+  background: $v_primary;
+
+  @include mediaQuery($ipad) {
+    padding: 40px 0;
+  }
+
+  @include mediaQuery($mobileLarge) {
+    padding: 30px 0;
+  }
+
+  &-first {
+    padding-bottom: 60px;
+    justify-content: space-between;
+
+    @include mediaQuery($ipad) {
+      padding-bottom: 0;
+    }
+
+    &-menu {
+      padding: 0 10px;
+
+      @include mediaQuery($ipad) {
+        width: 50%;
+        padding: 0 10px 40px;
+      }
+
+      @include mediaQuery($mobileLarge) {
+        padding: 0 10px 20px;
+      }
+
+      @include mediaQuery($mobileLarge) {
+        width: 100%;
+      }
+
+      h6 {
+        @include defaultFontStyle(500, 16, 18, $v_title);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        svg {
+          display: none;
+
+          @include mediaQuery($mobileLarge) {
+            display: block;
+          }
+        }
+
+        @include mediaQuery($mobileLarge) {
+          height: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 0px;
+          cursor: pointer;
+          @include mediaFontStyle(24, 28);
+        }
+
+        @include mediaQuery($mobile) {
+          @include mediaFontStyle(20, 28);
+        }
+
+        @include mediaQuery($mobileSmall) {
+          @include mediaFontStyle(18, 22);
+        }
+
+      }
+
+      ul {
+        @include mediaQuery($mobileLarge) {
+          display: none;
+          margin-top: 15px;
+          @include transition(all 0.5s);
+        }
+
+        li {
+          margin-bottom: 25px;
+          display: block;
+
+          @include mediaQuery($mobileLarge) {
+            margin-bottom: 10px;
+          }
+
+          a {
+            display: inline-block;
+            @include transition(all 0.5s);
+            @include defaultFontStyle(500, 14, 18, $v_title);
+
+            @include mediaQuery($mobileLarge) {
+              @include mediaFontStyle(16, 20);
+            }
+
+            &:hover {
+              color: $v_secondary;
+            }
+          }
+        }
+      }
+
+      &:last-child {
+
+        @include mediaQuery($ipad) {
+          display: none;
+        }
+      }
+
+      &:first-child {
+
+        display: none;
+
+        @include mediaQuery($ipad) {
+          display: block;
+        }
+      }
+
+      @include mediaQuery($mobileLarge) {
+        &.v_active {
+          @include transition(all 0.5s);
+
+          ul {
+            @include transition(all 0.5s);
+            display: block;
+          }
+
+          h6 {
+            @include transition(all 0.5s);
+
+            svg {
+              @include transition(all 0.5s);
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+
+    &-social {
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+
+      @include mediaQuery($large) {
+        margin-top: 20px;
+      }
+
+      li {
+        margin: 0 20px 0 0 !important;
+
+        a {
+          @include transition(all 0.5s);
+
+          svg {
+            .v_fill {
+              @include transition(all 0.5s);
+            }
+          }
+
+          &:hover {
+            @include transition(all 0.5s);
+
+            svg {
+              .v_fill {
+                @include transition(all 0.5s);
+                fill: $v_secondary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-second {
+    justify-content: space-between;
+    align-items: center;
+
+    &-newsletter {
+      width: 25%;
+      padding: 0 10px;
+
+      @include mediaQuery($extraLarge) {
+        width: 30%;
+      }
+
+      @include mediaQuery($ipad) {
+        width: 40%;
+      }
+
+      @include mediaQuery($mobileLarge) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      h6 {
+        @include defaultFontStyle(700, 16, 22, $v_title);
+        margin-bottom: 10px;
+      }
+
+      &-input {
+        position: relative;
+
+        input {
+          height: 50px;
+          padding: 10px 50px 12px 10px;
+          border: 1px solid $v_title;
+          @include defaultFontStyle(500, 14, 24, $v_title);
+          outline: none;
+          background-color: transparent;
+          width: 100%;
+
+          &::-webkit-input-placeholder,
+          &::-moz-placeholder,
+          &::-ms-placeholder,
+          &::placeholder {
+            color: $v_title;
+          }
+
+          &:focus,
+          &:focus-visible,
+          &:focus-within,
+          &:hover,
+          &:active {
+            border-color: $v_title;
+          }
+        }
+
+        input::placeholder {
+          @include defaultFontStyle(500, 14, 24, $v_title);
+        }
+
+        button {
+          outline: none;
+          background-color: transparent;
+          border: none;
+          position: absolute;
+          height: 50px;
+          right: 0;
+          top: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+        }
+      }
+    }
+
+    .v_footer-first-social {
+      display: none;
+
+      @include mediaQuery($mobileLarge) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        margin-top: 15px;
+      }
+    }
+
+    &-privacy {
+      display: flex;
+      flex-direction: column;
+      padding: 0 10px;
+
+      @include mediaQuery($mobileLarge) {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+      h6 {
+        margin-bottom: 10px;
+        @include defaultFontStyle(500, 32, 40, $v_title);
+
+        @include mediaQuery($mobileSmall) {
+          @include mediaFontStyle(28, 34);
+        }
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+
+        li {
+          position: relative;
+          padding: 0 10px;
+          @include defaultFontStyle(500, 14, 24, $v_title);
+
+          &::before {
+            @include content;
+            height: 70%;
+            right: 0px;
+            top: 4px;
+            width: 1px;
+            background-color: $v_title;
+          }
+
+          a {
+            display: inline-block;
+            @include transition(all 0.5s);
+            @include defaultFontStyle(500, 14, 24, $v_title);
+
+            @include mediaQuery($mobileSmall) {
+              @include mediaFontStyle(13, 20);
+            }
+
+            &:hover {
+              color: $v_secondary;
+            }
+          }
+
+          &:last-child {
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

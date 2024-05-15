@@ -1,0 +1,161 @@
+@import "../../helper/helper";
+
+.v_formula {
+  &-left {}
+
+  .v_col-6 {
+    @include mediaQuery($ipad) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  &-right {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    background-color: $v_secondary;
+
+    @include mediaQuery($desktop) {
+      padding: 30px;
+    }
+
+    @include mediaQuery($extraLarge) {
+      padding: 20px;
+    }
+
+    @include mediaQuery($large) {
+      display: block;
+      padding: 20px;
+    }
+
+    .slick-arrow {
+      display: none !important;
+    }
+
+    h3 {
+      @include mediaQuery($large) {
+        text-align: center;
+        font-size: 26px;
+      }
+    }
+
+    button {
+      @include mediaQuery($large) {
+        margin: 0 auto;
+      }
+    }
+
+    &-slider {
+      margin: 30px 0 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @include mediaQuery($extraLarge) {
+        margin: 10px 0;
+      }
+
+      @include mediaQuery($large) {
+        display: block;
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      &-inner {
+        width: 50%;
+        margin-bottom: 30px;
+
+        @include mediaQuery($desktop) {
+          margin-bottom: 15px
+        }
+
+        @include mediaQuery($large) {
+          width: 100%;
+        }
+
+        h5 {
+          @include defaultFontStyle(600, 19, 24, $v_title);
+          margin-top: 9px;
+
+          @include mediaQuery($extraLarge) {
+            @include mediaFontStyle(17, 22);
+          }
+
+          @include mediaQuery($large) {
+            @include mediaFontStyle(19, 24);
+            margin-bottom: 15px
+          }
+        }
+
+        p {
+          @include defaultFontStyle(500, 16, 24, $v_decColor);
+          max-width: 85%;
+
+          @include mediaQuery($extraLarge) {
+            max-width: 95%;
+          }
+
+          @include mediaQuery($extraLarge) {
+            @include mediaFontStyle(14, 24);
+          }
+
+          @include mediaQuery($large) {
+            max-width: 100%;
+            @include mediaFontStyle(16, 24);
+          }
+        }
+      }
+
+      .slick-dots {
+        position: relative;
+        top: 0px;
+        z-index: 1;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+
+        li {
+          margin: 0;
+          height: unset;
+          width: unset;
+          cursor: unset;
+          @include transition(all 0.5s);
+
+          button {
+            width: 10px;
+            height: 10px;
+            border-radius: 100px;
+            background-color: $v_decColor;
+            margin: 0 5px;
+            cursor: pointer;
+            @include transition(all 0.5s);
+
+            &::before {
+              display: none;
+            }
+          }
+
+          &.slick-active {
+            @include transition(all 0.5s);
+
+            button {
+              @include transition(all 0.5s);
+              width: 20px;
+              background: $v_primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.v_future {
+    .v_formula-right-slider-inner {
+      width: 100%;
+    }
+  }
+}

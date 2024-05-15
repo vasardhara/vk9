@@ -1,0 +1,176 @@
+@import "../../helper/helper";
+
+.v_bottle {
+  background-color: $v_primary;
+  padding: 0;
+  margin-top: -1px;
+
+  @include mediaQuery($ipad) {
+    padding: 30px 0;
+    margin: 0;
+  }
+
+  .v_common-title {
+    position: relative;
+    top: 100px;
+
+    @include mediaQuery($ipad) {
+      top: 0;
+      text-align: center;
+    }
+  }
+
+  .v_container {
+    max-width: 1100px;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mediaQuery($ipad) {
+      display: block;
+    }
+
+    &-left,
+    &-right {
+      width: 30%;
+
+      @include mediaQuery($ipad) {
+        display: none;
+      }
+    }
+
+    &-center {
+      position: relative;
+      top: -90px;
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mediaQuery($large) {
+        top: -70px;
+      }
+
+      @include mediaQuery($ipad) {
+        top: 0;
+        width: 100%;
+        margin-top: 40px;
+        display: block;
+      }
+
+      img {
+        @include mediaQuery($ipad) {
+          margin: 0 auto;
+        }
+      }
+
+      &-slider {
+        display: none;
+
+        @include mediaQuery($ipad) {
+          display: block;
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        @include mediaQuery($mobileSmall) {
+          width: 98%;
+        }
+
+        .slick-arrow {
+          display: none !important;
+        }
+
+        .slick-dots {
+          position: relative;
+          top: 30px;
+          z-index: 1;
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+
+          li {
+            margin: 0;
+            height: unset;
+            width: unset;
+            cursor: unset;
+            @include transition(all 0.5s);
+
+            button {
+              width: 10px;
+              height: 10px;
+              border-radius: 100px;
+              background-color: $v_decColor;
+              margin: 0 5px;
+              cursor: pointer;
+              @include transition(all 0.5s);
+
+              &::before {
+                display: none;
+              }
+            }
+
+            &.slick-active {
+              @include transition(all 0.5s);
+
+              button {
+                @include transition(all 0.5s);
+                width: 20px;
+                background: $v_white;
+              }
+            }
+          }
+        }
+      }
+
+      button {
+        width: 35%;
+        margin: 50px auto 0;
+
+        @include mediaQuery($mobile) {
+          width: 50%;
+        }
+
+        @include mediaQuery($mobileSmall) {
+          width: 80%;
+        }
+      }
+    }
+
+    &-li {
+      display: flex;
+      margin-bottom: 50px;
+
+      @include mediaQuery($ipad) {
+        justify-content: center;
+      }
+
+      &-icon {
+        @include square(48px);
+        display: flex;
+      }
+
+      &-content {
+        margin-left: 20px;
+        flex: 1 1;
+
+        h4 {
+          @include defaultFontStyle(700, 19, 22, $v_title);
+        }
+
+        p {
+          @include defaultFontStyle(500, 16, 24, $v_title);
+          margin-top: 7px;
+          max-width: 80%;
+
+          @include mediaQuery($extraLarge) {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

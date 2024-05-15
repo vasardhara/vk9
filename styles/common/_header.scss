@@ -1,0 +1,251 @@
+// Header CSS
+.v_header {
+  padding: 22.5px 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background: $v_primary;
+  z-index: 99;
+  box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.1);
+
+  @include mediaQuery($large) {
+    padding: 15px 0;
+    top: 38px;
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-logo {}
+
+  &-menu {
+    display: flex;
+    align-items: center;
+    margin-left: 47px;
+
+    li {
+      margin: 0 25px;
+
+      a {
+        padding: 15px 0;
+        @include defaultFontStyle(500, 14, 18, $v_title);
+        @include transition(all 0.5s);
+        text-transform: uppercase;
+
+        &:hover {
+          color: $v_white;
+          @include transition(all 0.5s);
+        }
+      }
+
+      &:first-child {
+        display: none;
+      }
+    }
+
+    @include mediaQuery($large) {
+      display: none;
+    }
+  }
+
+  .v_header-close {
+    display: none;
+  }
+
+  &-user,
+  &-social {
+    display: none;
+  }
+
+  .v_mobile-menu {
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $v_primary;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .v_header-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 30px 30px 0;
+
+      li {
+        margin: 0 0 10px;
+
+        a {
+          padding: 0;
+          text-transform: capitalize;
+          @include mediaFontStyle(36, 60);
+
+          @include mediaQuery($mobileSmall) {
+            @include mediaFontStyle(28, 50);
+          }
+        }
+
+        &:first-child {
+          display: block;
+        }
+      }
+    }
+
+    .v_header-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include square(20px);
+      margin: 60px 30px 0;
+    }
+
+    .v_header-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 150px;
+      padding: 15px;
+      border-bottom: 1px solid #00031E;
+      border-top: 1px solid #00031E;
+
+      li {
+        margin: 0 20px;
+      }
+    }
+
+    .v_header-user {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #00031E;
+
+      li {
+        width: 50%;
+        padding: 15px;
+        border-right: 1px solid #00031E;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  &-bar {
+    display: none;
+
+    @include mediaQuery($large) {
+      display: block;
+      margin-right: 15px;
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &-shop {
+      @include defaultFontStyle(bold, 16, 20, $v_title);
+      @include transition(all 0.5s);
+      margin-right: 40px;
+
+      &:hover {
+        color: $v_white;
+        @include transition(all 0.5s);
+      }
+
+      @include mediaQuery($large) {
+        display: none;
+      }
+    }
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      &-user {
+        &:hover {
+
+          svg {
+            .v_stroke {
+              stroke: $v_white;
+              @include transition(all 0.5s);
+            }
+          }
+        }
+      }
+
+      &-cart {
+        position: relative;
+        padding-top: 5px;
+        margin-left: 30px;
+
+        @include mediaQuery($large) {
+          margin-left: 20px;
+        }
+
+        span {
+          position: absolute;
+          top: -2px;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          bottom: auto;
+          border-radius: 100px;
+          @include square(16px);
+          background-color: $v_title;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include defaultFontStyle(bold, 11, 14, $v_white);
+        }
+
+        &:hover {
+
+          svg {
+            .v_stroke {
+              stroke: $v_white;
+              @include transition(all 0.5s);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.v_header-strip {
+  position: sticky;
+  background-color: $v_white;
+  top: 0;
+  z-index: 9;
+  display: none;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+
+  @include mediaQuery($large) {
+    display: flex;
+  }
+
+  p {
+    @include defaultFontStyle(500, 14, 24, $v_black);
+  }
+}
+
+
+body {
+  &.v_menu-active {
+    overflow: hidden;
+  }
+}

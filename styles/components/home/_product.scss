@@ -1,0 +1,23 @@
+@import "../../helper/helper";
+
+.v_product {
+  &-logo {
+    display: flex;
+    justify-content: space-between;
+
+    &-inner {
+      width: 33.33%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+
+      @include mediaQuery($mobileLarge) {
+        width: 20%;
+      }
+
+      img {
+        max-width: max-content;
+      }
+    }
+  }
+}

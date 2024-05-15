@@ -1,0 +1,41 @@
+// Button css
+.v_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  @include defaultFontStyle(600, 16, 24, $v_title);
+  border-radius: 100px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+  background: $v_primary;
+  border: none;
+  padding: 13px 29px;
+  cursor: pointer;
+  text-transform: capitalize;
+  @include transition(all 0.5s);
+
+  @include mediaQuery($extraLarge) {
+  }
+
+  &:hover {
+    color: $v_white;
+    @include transition(all 0.5s);
+  }
+
+  &-white {
+    color: $v_white;
+
+    &:hover {
+      color: $v_title;
+    }
+  }
+
+  &-secondary {
+    background: $v_secondary;
+
+    &:hover {
+      color: $v_title;
+      @include transition(all 0.5s);
+    }
+  }
+}

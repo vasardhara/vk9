@@ -1,0 +1,164 @@
+@import "../../helper/helper";
+
+.v_customer {
+  background-color: $v_primary;
+
+  &-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &-inner {
+      padding: 0 5px;
+
+      &-img {}
+
+      &-dec {
+        padding: 20px;
+        background-color: $v_secondary;
+
+        @include mediaQuery($desktop) {
+          padding: 15px;
+        }
+
+        h6 {
+          @include defaultFontStyle(600, 19, 22, $v_black);
+          margin-top: 15px;
+        }
+
+        span {
+          @include defaultFontStyle(500, 16, 24, $v_black);
+        }
+
+        p {
+          @include defaultFontStyle(500, 16, 24, $v_black);
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+
+  .slick-list {
+    @include mediaQuery($mobile) {
+      padding: 0px 30px 0 0 !important;
+    }
+  }
+
+  .slick-dots {
+    position: relative;
+    top: 30px;
+    z-index: 1;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      margin: 0;
+      height: unset;
+      width: unset;
+      cursor: unset;
+      @include transition(all 0.5s);
+
+      button {
+        width: 10px;
+        height: 10px;
+        border-radius: 100px;
+        background-color: $v_decColor;
+        margin: 0 5px;
+        cursor: pointer;
+        @include transition(all 0.5s);
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &.slick-active {
+        @include transition(all 0.5s);
+
+        button {
+          @include transition(all 0.5s);
+          width: 20px;
+          background: $v_white;
+        }
+      }
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    left: auto;
+    right: 0;
+    left: auto;
+    top: auto;
+    bottom: -48px;
+    @include square(22px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    @include transition(all 0.5s);
+
+    @include mediaQuery($ipad) {
+      @include square(16px);
+      bottom: -42px;
+    }
+
+    svg {
+      @include transition(all 0.5s);
+
+      @include mediaQuery($ipad) {
+        @include square(16px);
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &.slick-prev {
+      right: 30px;
+
+      @include mediaQuery($ipad) {
+        right: 20px;
+      }
+    }
+
+    .slick-next {}
+
+    &:hover {
+      @include transition(all 0.5s);
+
+      .v_stroke {
+        @include transition(all 0.5s);
+        stroke: $v_secondary;
+      }
+    }
+  }
+
+  &.v_happy {
+    background-color: $v_secondary;
+
+    .v_customer-content-inner-dec {
+      background-color: $v_white;
+    }
+
+    .slick-dots {
+      li {
+        &.slick-active {
+          button {
+            background-color: $v_primary;
+          }
+        }
+      }
+    }
+
+    .slick-arrow {
+      &:hover {
+        .v_stroke {
+          stroke: $v_primary;
+        }
+      }
+    }
+  }
+}

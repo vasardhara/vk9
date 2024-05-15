@@ -1,0 +1,45 @@
+// title css
+.v_common-title {
+  h3 {
+    @include defaultFontStyle(500, 48, 50, $v_title);
+
+    @include mediaQuery($desktop) {
+      @include mediaFontStyle(33, 40);
+    }
+
+    @include mediaQuery($mobile) {
+      @include mediaFontStyle(28, 32);
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  p {
+    @include defaultFontStyle(500, 19, 28, $v_decColor);
+    margin-top: 8px;
+
+    @include mediaQuery($mobile) {
+      @include mediaFontStyle(16, 26);
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  span {
+    @include defaultFontStyle(600, 24, 28, $v_title);
+    margin-top: 14px;
+    display: block;
+
+    @include mediaQuery($mobile) {
+      @include mediaFontStyle(20, 22);
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+}

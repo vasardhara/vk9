@@ -1,0 +1,42 @@
+@import "../helper/helper";
+
+.v_not-found {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+
+  &-img {
+    img {
+      max-width: 100%;
+      margin: 0 auto;
+      width: unset;
+      height: unset;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+    @include mediaQuery($mobileLarge) {
+      margin-top: 30px;
+    }
+
+    h2 {
+      @include defaultFontStyle(500, 30, 42, #091846);
+      margin: 0 auto 30px;
+      text-align: center;
+
+      @include mediaQuery($mobileLarge) {
+        @include mediaFontStyle(18, 26);
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

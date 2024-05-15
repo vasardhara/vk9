@@ -1,0 +1,160 @@
+@import "../../helper/helper";
+
+.v_hero {
+  overflow: hidden;
+
+  &-slider {
+    position: relative;
+    
+    &-content {
+      top: 50%;
+      position: absolute;
+      max-width: 1330px;
+      margin: 0 auto;
+      transform: translate(0, -50%);
+      padding: 0 10px;
+
+      h2 {
+        @include defaultFontStyle(700, 100, 90, $v_title);
+
+        @include mediaQuery($desktop) {
+          @include mediaFontStyle(78, 70);
+        }
+
+        @include mediaQuery($extraLarge) {
+          @include mediaFontStyle(58, 60);
+        }
+
+        @include mediaQuery($large) {
+          @include mediaFontStyle(40, 42);
+        }
+      }
+
+      p {
+        @include defaultFontStyle(500, 19, 26, $v_title);
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        @include mediaQuery($extraLarge) {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+
+      button {
+        margin: 0 auto;
+      }
+
+      &.v_slider-1 {
+        left: 0;
+        right: 0;
+        text-align: center;
+
+        h2 {
+          color: $v_secondary;
+        }
+
+        p {
+          color: $v_secondary;
+        }
+      }
+
+      &.v_slider-2 {
+        top: 40%;
+        left: 0;
+        right: 0;
+        text-align: center;
+
+        @include mediaQuery($large) {
+          top: 40%;
+        }
+
+        p {
+          max-width: 36%;
+          margin-left: auto;
+          margin-right: auto;
+
+          @include mediaQuery($extraLarge) {
+            max-width: 60%;
+          }
+        }
+      }
+
+      &.v_slider-3 {
+        text-align: left;
+
+        h2 {
+          max-width: 60%;
+
+          @include mediaQuery($desktop) {
+            max-width: 55%;
+          }
+        }
+
+        p {
+          margin-left: 0;
+        }
+
+        button {
+          margin-left: 0;
+        }
+      }
+
+
+      @include mediaQuery($ipad) {
+        position: unset;
+        transform: unset;
+        text-align: center;
+        padding: 30px;
+        background-color: $v_secondary;
+        margin: 0 -10px;
+        overflow: hidden;
+        height: 100%;
+
+      }
+
+      @include mediaQuery($mobileSmall) {
+        padding: 20px;
+      }
+
+      &.v_slider-1,
+      &.v_slider-2,
+      &.v_slider-3 {
+        @include mediaQuery($ipad) {
+          text-align: center;
+        }
+
+        p {
+          @include mediaQuery($ipad) {
+            max-width: 100%;
+            margin: 0 auto 20px;
+            color: $v_title;
+          }
+        }
+
+        h2 {
+          @include mediaQuery($ipad) {
+            @include mediaFontStyle(42, 56);
+            max-width: 100%;
+            color: $v_title;
+            margin-bottom: 20px;
+          }
+
+          @include mediaQuery($mobileLarge) {
+            @include mediaFontStyle(48, 58);
+          }
+
+          @include mediaQuery($mobileSmall) {
+            @include mediaFontStyle(40, 48);
+          }
+        }
+
+        button {
+          @include mediaQuery($ipad) {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

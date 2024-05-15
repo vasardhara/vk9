@@ -1,0 +1,33 @@
+@import "../../helper/helper";
+
+.v_about {
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .v_common-title {
+      text-align: center;
+
+      h4 {
+        font-size: 72px;
+        line-height: 68px;
+      }
+
+      p {
+        @include defaultFontStyle(500, 16, 24, $v_decColor);
+        max-width: 80%;
+        margin: 15px auto 0;
+
+        @include mediaQuery($mobile) {
+          max-width: 100%;
+        }
+      }
+    }
+
+    img {
+      margin: 20px 0 30px;
+    }
+  }
+}
