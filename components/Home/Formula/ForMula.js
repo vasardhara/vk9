@@ -22,7 +22,7 @@ function ForMula() {
         };
     }, []);
 
-    var formula = {
+    var forMulas = {
         dots: true,
         infinite: true,
         speed: 500,
@@ -47,7 +47,7 @@ function ForMula() {
 
                                 <div className='v_formula-right-slider'>
                                     {isMobile ? (
-                                        <Slider {...formula}>
+                                        <Slider {...forMulas}>
                                             <div>
                                                 <div className='v_formula-right-slider-inner'>
                                                     <h5>Probiotics</h5>
