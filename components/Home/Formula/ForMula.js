@@ -5,7 +5,7 @@ import CommonTitle from '@/components/Common/CommonTitle'
 import ImageView from '@/components/Images';
 import '@/styles/components/home/_formula.scss'
 
-function Formula() {
+function ForMula() {
 
     const [isMobile, setIsMobile] = useState(false);
 
@@ -105,4 +105,4 @@ function Formula() {
     );
 };
 
-export default Formula; 
+export default ForMula; 
