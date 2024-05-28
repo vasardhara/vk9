@@ -1,6 +1,6 @@
 import Hero from "@/components/Home/Hero/Hero";
 import EveryBottle from "@/components/Home/EveryBottle/EveryBottle";
-// import ForMula from "@/components/Home/ForMula/ForMula";
+import ForMula from "@/components/Home/ForMula/ForMula";
 import ClientLogo from "@/components/Home/ClientLogo/ClientLogo";
 import CustomerSay from "@/components/Home/CustomerSay/CustomerSay";
 import ProductLogo from "@/components/Home/ProductLogo/ProductLogo";
@@ -13,7 +13,7 @@ function Home() {
     <>
       <Hero />
       <EveryBottle />
-      {/* <ForMula /> */}
+      <ForMula />
       <ClientLogo />
       <CustomerSay />
       <ProductLogo />

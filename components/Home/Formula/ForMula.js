@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 import CommonTitle from '@/components/Common/CommonTitle'
-import ImageView from '@/components/Images';
+import ImageView from '@/components/Images/index';
 import '@/styles/components/home/_formula.scss'
 
 function ForMula() {
